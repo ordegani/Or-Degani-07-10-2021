@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Switch>
-        <Route path="/home" exact>
+        <Route path="/search" exact>
             <Home favourites={favourites} setfavourites={setfavourites} />
           </Route>
           <Route path="/favourites" exact>

@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
+import Result from "./Result";
 
 export default function Home({ favourites, setFavourites }) {
-    const [query, setquery] = useState("Tel%20Aviv")
-
-  const apikey = "Uc9kVWewJlSYXyFkbmILsnpmWj16RD8p";
-  useEffect(() => {
-    const getResults = async () => {
-      const response = await axios.get(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apikey}&q=${query}`
-        
-      );
-      console.log(response.data.results);
-    };
-    getResults();
-  }, [query]);
+  const apikey = "Btv69uHeljLaOSw5I2fa6jgcdeGbsdxY";
+ 
+  const getResults = () => {
+    return axios.get(
+        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apikey}&q=Tel%20Aviv`
+    );
+  };
 
   const addToFavourites = (e) => {
     let isExists = false;
 
     favourites.find((item) => {
-      if (item.title == e.title) {
+      if (item.LocalizedName == e.LocalizedName) {
         isExists = true;
         console.log("can't be saved");
       }
@@ -32,5 +27,16 @@ export default function Home({ favourites, setFavourites }) {
       console.log(e);
     }
   };
-  return <div></div>;
+
+  useEffect(async () => {
+    const response = await getResults();
+    console.log(response.data)
+  }, []);
+
+  return (
+  <div className="Home_container">
+<Result GeoPosition={Result.data.GeoPosition}/>
+
+  </div>
+  )
 }
