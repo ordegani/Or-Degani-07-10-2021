@@ -5,10 +5,10 @@ import Result from "./Result";
 
 export default function Home({ favourites, setFavourites }) {
   const apikey = "Btv69uHeljLaOSw5I2fa6jgcdeGbsdxY";
- 
+
   const getResults = () => {
     return axios.get(
-        `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apikey}&q=Tel%20Aviv`
+      `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apikey}&q=Tel%20Aviv`
     );
   };
 
@@ -30,13 +30,12 @@ export default function Home({ favourites, setFavourites }) {
 
   useEffect(async () => {
     const response = await getResults();
-    console.log(response.data)
+    console.log(response.data);
   }, []);
 
   return (
-  <div className="Home_container">
-<Result GeoPosition={Result.data.GeoPosition}/>
-
-  </div>
-  )
+    <div className="Home_container">
+      <Result GeoPosition={Result.data.GeoPosition} />
+    </div>
+  );
 }
