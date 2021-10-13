@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
-import './App.css'
+import "./App.css";
 import Home from "./Home";
 import Favourites from "./Favourites";
 import Navbar from "./Navbar";
@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar/>
+        <Navbar />
         <Switch>
-        <Route path="/search" exact>
+          <Route path="/search" exact>
             <Home favourites={favourites} setfavourites={setfavourites} />
           </Route>
           <Route path="/favourites" exact>
@@ -22,7 +22,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-
 }
 
 export default App;
