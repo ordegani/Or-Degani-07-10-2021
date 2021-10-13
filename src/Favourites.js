@@ -1,9 +1,5 @@
-import './App.css';
+import "./App.css";
 
 export default function Favourites() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }
