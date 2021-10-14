@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./App.css";
 import axios from "axios";
-import Result from "./Result";
+// import Result from "./Result";
 
 export default function Home({ favourites, setFavourites }) {
   const apikey = "Btv69uHeljLaOSw5I2fa6jgcdeGbsdxY";
@@ -33,9 +33,9 @@ export default function Home({ favourites, setFavourites }) {
     console.log(response.data);
   }, []);
 
-  return (
-    <div className="Home_container">
-      <Result GeoPosition={Result.data.GeoPosition} />
-    </div>
-  );
+//   return (
+//     <div className="Home_container">
+//       <Result GeoPosition={Result.data.GeoPosition} />
+//     </div>
+//   );
 }
