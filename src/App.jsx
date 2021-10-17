@@ -2,22 +2,22 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import React, { useState } from "react";
 import "./App.css";
 import Home from "./Home";
-import Favourites from "./Favourites";
+import Saved from "./Saved";
 import Navbar from "./Navbar";
 
 function App() {
-  const [favourites, setfavourites] = useState([]);
+  const [save, setsave] = useState([]);  
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route path="/search" exact>
-            <Home favourites={favourites} setfavourites={setfavourites} />
-          </Route>
-          <Route path="/favourites" exact>
-            <Favourites favourites={favourites} setfavourites={setfavourites} />
-          </Route>
+        <Route path="/home" exact>
+          <Home save={save} setsave={setsave} />
+        </Route>
+          <Route path="/saved" exact>
+          <Saved save={save} setsave={setsave} />
+        </Route>
         </Switch>
       </BrowserRouter>
     </div>
