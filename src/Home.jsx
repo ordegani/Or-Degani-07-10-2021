@@ -40,7 +40,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Result from "./Result"
+import Result from './Result';
 
 
 const Home = ({save, setsave}) => {
@@ -70,7 +70,7 @@ const Home = ({save, setsave}) => {
 
     setlocation(data);
   };
-  console.log(location);
+
 
   //useEffect
   useEffect(() => {
