@@ -1,6 +1,5 @@
 import { React } from "react";
-import Result from "./Result"
-
+import Result from "./Result";
 
 export default function Saved({ save, setsave }) {
   // useEffect(() => {
@@ -32,22 +31,21 @@ export default function Saved({ save, setsave }) {
     <div className="homeContainer">
       <button
         className={save.length !== 1 ? "hidden" : "reset"}
-        //TODO axios.delet
         onClick={() => setsave([])}
       >
         Reset
       </button>
-      
-      <div className="savedMoviesContainer">
-      {save.map((save) => (
-             <Result GeoPosition={save[0].GeoPosition}
-             LocalizedName={save[0].LocalizedName}
-    
 
+      <div className="savedMoviesContainer">
+        {save.map((save) => (
+          <Result
+            LocalizedName={location[2].LocalizedName}
+            Latitude={location[4].GeoPosition.Latitude}
+            Longitude={location[4].GeoPosition.Longitude}
             onClick={remove}
             text="Delete"
           />
-          ))}
+        ))}
       </div>
     </div>
   );

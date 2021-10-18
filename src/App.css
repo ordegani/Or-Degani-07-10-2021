@@ -8,14 +8,14 @@
   text-align: center;
   color: aliceblue;
 }
-.SlocationContainer{
+.SlocationContainer {
   color: aquamarine;
   background-color: azure;
 }
 
 .locationContainer > p {
   width: 90%;
-  color:black
+  color: black;
 }
 
 .locationContainer {
@@ -61,7 +61,7 @@
   list-style: none;
 }
 
-.navbar_link{
+.navbar_link {
   text-decoration: none;
   font-size: medium;
   border-radius: 60px;
@@ -106,12 +106,3 @@ Li::first-letter {
   text-align: center;
 }
 /* */
-.joinContainer,
-.loginContainer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 15vh;
-  align-items: center;
-}
-
