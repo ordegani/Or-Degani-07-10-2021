@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import "./App.css";
 function Navbar({ favourites, setFavourites }) {
 
   return (
@@ -13,7 +13,7 @@ function Navbar({ favourites, setFavourites }) {
         </li>
         <li>
           <Link className="navbar_link" to="/saved">
-            Saved
+            Saved♥
           </Link>
         </li>
       </ul>

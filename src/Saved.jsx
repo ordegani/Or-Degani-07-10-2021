@@ -1,6 +1,6 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import Result from "./Result"
-import axios from "axios";
+
 
 export default function Saved({ save, setsave }) {
   // useEffect(() => {
@@ -37,9 +37,9 @@ export default function Saved({ save, setsave }) {
       >
         Reset
       </button>
-      ♥
+      
       <div className="savedMoviesContainer">
-      {save.map((movie) => (
+      {save.map((save) => (
              <Result GeoPosition={save[0].GeoPosition}
              LocalizedName={save[0].LocalizedName}
     

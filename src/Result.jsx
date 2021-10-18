@@ -1,22 +1,22 @@
 import React from "react";
+import "./App.css";
 
-
-export default function Movie({
-    GeoPosition,
-    LocalizedName,
-
+export default function Result({
+    Longitude, 
+     Latitude,
+     LocalizedName,
   onClick,
   text,
 }) {
   return (
-    <div className="movieContainer">
-      <h4>{LocalizedName}</h4>   
-      <h4>{GeoPosition}</h4>  
-
-
+    <div className="locationContainer">
+<h2>{LocalizedName}</h2>
+<h2>{Longitude}</h2>
+<h2>{Longitude}</h2>
+     
       <button
         className="saved"
-        onClick={() => onClick({ GeoPosition, LocalizedName })}
+        onClick={() => onClick({ Longitude,  Latitude, LocalizedName})}
         type="Submit"
       >
         {text}
