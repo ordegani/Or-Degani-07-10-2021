@@ -5,7 +5,7 @@ import Result from "./Result";
 const Home = ({ save, setsave }) => {
   const [location, setlocation] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState(search);
+  const [query, setQuery] = useState("");
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -14,21 +14,22 @@ const Home = ({ save, setsave }) => {
     e.preventDefault();
     setQuery(search);
     setSearch("");
+    getlocation();
   };
 
   const getlocation = async () => {
-    const key = "HsM5wCAE5BmVAArfV1D2vayYvGpbZx77";
+    const key = "vQrNDpXGO0kPepS1ZegwDrdAoIjPc8wV";
     const response = await fetch(
       `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&q=${query}`
     );
-    const data = await response.json();
+    // const data = await response.json();
 
-    setlocation(data);
+    setlocation(response);
   };
 
-  useEffect(() => {
-    getlocation();
-  }, [query]);
+  // useEffect(() => {
+  //   getlocation();
+  // }, [query]);
 
   const addToSaved = (m) => {
     let isExists = false;

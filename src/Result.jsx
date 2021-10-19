@@ -11,7 +11,7 @@ export default function Result({
   return (
     <div className="locationContainer">
       <h2>{LocalizedName}</h2>
-      <h2>{Longitude}</h2>
+      <h2>{Latitude}</h2>
       <h2>{Longitude}</h2>
 
       <button
